@@ -1,0 +1,91 @@
+---
+title: "Ayudantía 2: CHI CUADRADO $x^2$"
+subtitle: "Estadística Correlacional"
+author: "Equipo de Ayudantes"
+date: 2025-10-15
+lang: es
+date-format: "long"
+format:
+  revealjs:
+    theme: solarized
+    slide-number: true
+    transition: fade
+    transition-speed: slow
+css: styles.css
+editor: visual
+echo: true
+---
+
+## ¿Qué hacemos si tenemos dos variables nominales?
+
+#### $Chi$ $cuadrado$ $x^2$ {style="color: orange"}
+
+Primero debemos entender las tablas de contingencia
+
+![Tabla de frecuencias cruzadas](images/1.png "Tabla de frecuencias cruzadas"){style="text-align: center;" fig-align="center"}
+
+## Establezcamos hipótesis para el caso anterior {style="text-align: center"}
+
++-----------------------------------------------------------------------+
+| #### Tenemos dos variables: {style="text-align: center"}              |
++-----------------------------------------------------------------------+
+| 1.  Nivel educacional (menos que universitaria y universitaria o más) |
++-----------------------------------------------------------------------+
+| 2.  Haber sido discriminado los últimos 12 meses (sí o no)            |
++-----------------------------------------------------------------------+
+|                                                                       |
++-----------------------------------------------------------------------+
+
+### Entonces, ¿cuál sería nuestra hipótesis alternativa y cuál sería nuestra hipótesis nula? {style="color: orange; text-align: center;"}
+
+------------------------------------------------------------------------
+
+### Imaginemos que tenemos una muestra pequeña de 100 casos, hacemos una tabla ideal que represente nuestras hipótesis. {style="text-align: justify; text-justify: inter-word; hyphens: auto;"}
+
+#### Tabla de hipótesis alternativa: {style="color: orange; text-align: center;"}
+
+![](images/2.png){fig-align="center"}
+
+$H_1$ = Existe relación entre ambas variables
+
+------------------------------------------------------------------------
+
+### Imaginando que tenemos una muestra pequeña de 100 casos, hacemos una tabla ideal que represente nuestras hipótesis. {style="text-align: justify; text-justify: inter-word; hyphens: auto;"}
+
+#### Tabla de hipótesis nula: {style="color: orange; text-align: center;"}
+
+![](images/3.png){fig-align="center"}
+
+$H_0$ = No existe relación entre ambas variables
+
+# CHI CUADRADO $X^2$
+
+-   Compara una tabla de no asociación (como la anterior) con nuestra tabla de contingencia (observada), y la lógica detrás es que existe asociación si son significativamente distintas.
+
+-   Parecido al valor $Z$ o a la prueba $t$, $x^2$ es comparado con un valor crítico (debe ser mayor a este).
+
+    $gl = (2 - 1) * (2 - 1) = 1 * 1 = 1$
+
+    Se le resta un grado de libertad por cantidad de categorías de cada variable (en este caso 2) y se multiplican entre sí.
+
+------------------------------------------------------------------------
+
+![](images/4.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+### Sin embargo, chi cuadrado solo permite rechazar o no la hipótesis nula, no saber la fuerza de la asociación... {style="color: orange; text-align: justify"}
+
++--------------------------------------------------------------------------+--------------------------------------------------+
+| Coeficiente Phi                                                          | V de Cramer                                      |
++==========================================================================+==================================================+
+| -   Para variables binarias                                              | -   Para tablas que van más allá de 2x2          |
++--------------------------------------------------------------------------+--------------------------------------------------+
+| -   Solo para tablas de 2x2                                              | -   Toma valores del $0$ a $1$                   |
++--------------------------------------------------------------------------+--------------------------------------------------+
+| -   Se interpreta igual que $Pearson$ ($-1$ a $1$) por sentido y fuerza. | -   Se interpreta con $Cohen$ para saber fuerza. |
++--------------------------------------------------------------------------+--------------------------------------------------+
+
+# Conclusión
+
+![](images/5.png){fig-align="center"}
