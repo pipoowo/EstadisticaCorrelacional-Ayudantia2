@@ -1,0 +1,195 @@
+---
+title: "Ayudantía 2: Correlación de Pearsons"
+subtitle: "Estadística Correlacional"
+author: "Felipe Vega G."
+date: 2025-10-15
+lang: es
+date-format: "long"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    transition: fade
+    transition-speed: slow
+css: styles.css
+editor: visual
+echo: true
+---
+
+```{r}
+#| echo: false
+pacman::p_load(tidyverse, # Manipulacion de datos
+               car, # Recodificar
+               sjPlot, # Tablas y graficos
+               sjmisc, # Descriptivos
+               kableExtra, # Tablas
+               psych, # Bivariados
+               corrplot, # Graficos correlacioj
+               broom,
+              gt) # Varios
+options(scipen = 999) # para desactivar notacion cientifica
+rm(list = ls()) # para limpiar el entorno de trabajo
+```
+
+## Índice
+
+1.  Covarianza
+
+2.  Correlación de Pearson
+
+3.  Nube de puntos o Scatterplot
+
+4.  Ejercicio
+
+## Covarianza
+
+La covarianza es una medida de asociación entre variables basada en la variabilidad de cada una de ellas, pero su valor no es interpretable directamente...
+
+A pesar de que mida la relación/asociación lineal entre dos variables, solo indica la dirección (positiva o negativa), la magnitud depende de las unidades de las variables.
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEO3ODDfv275IRjOLaBzluhsdy-mQTLezdbA&s){fig-align="center" width="5cm"}
+
+## Correlación de Pearson
+
+Medida estandarizada de covarianza
+
+```{r}
+#| echo: false
+
+variables_info <- tibble::tribble(
+  ~Variable, ~Definicion,
+  "Tipo de variables", "Intervalar/Razón + Intervalar/Razón",
+  "Interpretación", "Asociación lineal entre variables que indica sentido y fuerza de la asociación entre -1 a 1",
+  "Dirección", "Determinado por el signo del valor: positiva () o negativa",
+  "Intensidad o magnitud", "Criterios de Cohen (1988, 1992): muy pequeño (menor a 0.1), pequeño (entre 0.1 a 0.3), moderado (entre 0.3 y 0.5), grande (mayor a 0.5)",
+  "Significancia", "Como mínimo: 95% de confianza (p < 0.05)"
+)
+
+tabla_1 <- variables_info %>%
+  gt() %>%
+  tab_header(
+    title = md("**Correlación de Pearson**")
+  ) %>%
+  cols_label(
+    Variable = "Categoría",
+    Definicion = "Requisito"
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold", size = px(16)),
+    locations = cells_body(columns = Variable)
+  ) %>%
+  tab_options(
+    heading.title.font.size = px(24),
+    heading.align = "center",
+    column_labels.font.size = px(16),
+    column_labels.font.weight = "bold",
+    table.font.size = px(16.5),
+    data_row.padding = px(9),
+    row.striping.include_table_body = TRUE,
+    table.width = pct(112.5),
+    table.align = "center"
+  )
+
+tabla_1
+```
+
+**Importante: refiere a asociación, NO a causalidad ni explicación**
+
+## ¿Cómo se calcula?
+
+Para efectos prácticos, ocuparemos el siguiente código de R para calcular este tipo de correlación:
+
+```{r}
+#| eval: false
+cor.test(basededatos$variable1, basededatos$variable2, method = "pearson")
+```
+
+Así, obtendremos el valor-t, valor-p, el intervalo de confianza al 95% de confianza y el valor de la correlación.
+
+## Nube de puntos o Scatterplot
+
+Es una representación gráfica de la asociación de dos variables, donde cada punto representa el valor de cada caso en cada una de las variables.
+
+```{r}
+#| eval: false
+sjPlot::plot_scatter(data = basededatos, x = variable1, y = variable2)
+```
+
+![](https://files.planyway.com/strapi-uploads/assets/Scatter_plot_422d3c3f82.png){fig-align="center" width="8cm"}
+
+## Ejercicio práctico: enunciado
+
+**¿En qué medida se relacionan los ingresos (en pesos) de las personas con sus niveles de autoritarismo?**
+
+```{r}
+pacman::p_load(tidyverse, # Manipulacion de datos
+               car, # Recodificar
+               sjPlot, # Tablas y graficos
+               sjmisc, # Descriptivos
+               kableExtra, # Tablas
+               psych, # Bivariados
+               corrplot, # Graficos correlacioj
+               broom,
+              gt) # Varios
+
+options(scipen = 999) # para desactivar notacion cientifica
+rm(list = ls()) # para limpiar el entorno de trabajo
+
+load(url("https://github.com/cursos-metodos-facso/datos-ejemplos/raw/refs/heads/main/dataset4.RData")) # base de datos a utilizar
+```
+
+## Ejercicio práctico: preguntas orientadoras
+
+Antes de resolver el ejercicio, es importante tener las siguientes preguntas en mente:
+
+-   ¿Cuál es la naturaleza de nuestras variables?
+
+-   ¿Qué queremos saber de nuestras variables?
+
+-   ¿Qué medida estadística nos permite responder la pregunta?
+
+## Ejercicio: resolución
+
+Se usará cor.test para calcular la correlación de Pearson entre ambas variables:
+
+```{r}
+#| output: true
+cor.test(dataset4$ingresos, dataset4$autoritarismo, method = "pearson")
+```
+
+## Ejercicio: resolución
+
+Gráficamente, la correlación anteriormente calculada se vería de la siguiente forma:
+
+```{r}
+#| output: true
+sjPlot::plot_scatter(data = dataset4, x = ingresos, y = autoritarismo)
+```
+
+## Ejercicio: interpretación
+
+Una buena interpretación debe contener los siguientes elementos:
+
+-   Medida estadística que se empleó.
+
+-   Variables utilizadas y su naturaleza.
+
+-   Dirección e intensidad (mencionando valores obtenidos y criterios utilizados).
+
+-   Interpretación "en fácil": "a medida que x aumenta, y aumenta/disminuye".
+
+-   Significancia estadística (se rechaza o no hipótesis nula).
+
+## Ejercicio: interpretación
+
+Se empleó el **coeficiente de correlación de Pearson** debido a la naturaleza de las variables, en tanto los ingresos en peso y el nivel de autoritarismo corresponden a **variables númericas de razón.** El coeficiente da cuenta de una **relacion positiva y grande**, siguiendo los **criterios de Cohen** (1988) **(r = 0.79)**. Es decir, **a medida que aumentan los ingresos de las personas, también aumentan sus niveles de autoritarismo**. La relación es **estadísticamente significativa (p \< 0.001)**, por ende es posible rechazar H0 sobre no asociación entre variables, entregando evidencia a favor de una relación entre ambas variables con un 99.9% de confianza.
+
+## Conclusión
+
+-   La correlación de Pearson es una medida estandarizada de covarianza, que mide de manera lineal la relación entre dos variables numéricas.
+
+-   Para graficarla, se utlilizan gráficos de nube de puntos.
+
+-   Revisar clases ***Bivariada 1*** y ***Bivariada 2*** para mayor información.
+
+# **Gracias por su atención !**
