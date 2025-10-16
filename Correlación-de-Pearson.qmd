@@ -41,6 +41,8 @@ rm(list = ls()) # para limpiar el entorno de trabajo
 
 4.  Ejercicio
 
+Apretar [Cápsula !!!](https://youtu.be/xsHMdzCO9P4) para ingresar a la grabación
+
 ## Covarianza
 
 La covarianza es una medida de asociación entre variables basada en la variabilidad de cada una de ellas, pero su valor no es interpretable directamente: a pesar de que mida la relación/asociación lineal entre dos variables, solo indica la dirección (positiva o negativa), la magnitud depende de las unidades de las variables.
