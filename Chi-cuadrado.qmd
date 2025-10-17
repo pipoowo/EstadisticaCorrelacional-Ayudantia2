@@ -16,6 +16,10 @@ editor: visual
 echo: true
 ---
 
+## Enlace de la Cápsula
+
+Presiona [aquí](https://youtu.be/Eyfd_nAtrpQ) para acceder al video de esta presentación !
+
 ## ¿Qué hacemos si tenemos dos variables nominales?
 
 #### $Chi$ $cuadrado$ $x^2$ {style="color: orange"}

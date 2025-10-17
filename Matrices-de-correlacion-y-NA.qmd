@@ -16,6 +16,10 @@ editor: visual
 echo: true
 ---
 
+## Enlace de la Cápsula
+
+Presiona [aquí](https://youtu.be/U-upiQr94CM) para acceder al video de esta presentación !
+
 ## ¿Qué es una Matriz de Correlación?
 
 Una matriz de correlación se conforma cuando se representa simultaneamente más de un par de asociaciones bivariadas.
