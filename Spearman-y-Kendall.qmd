@@ -1,0 +1,125 @@
+---
+title: "Ayudantía 2: Spearman Y Tau de Kendall"
+subtitle: "Estadística Correlacional"
+author: "Equipo de Ayudantes"
+date: 2025-10-17
+lang: es
+date-format: "long"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    transition: fade
+    transition-speed: slow
+css: styles.css
+editor: visual
+echo: true
+---
+
+```{r}
+#| echo: false
+pacman::p_load(tidyverse, # Manipulacion de datos
+               car, # Recodificar
+               sjPlot, # Tablas y graficos
+               sjmisc, # Descriptivos
+               kableExtra, # Tablas
+               psych, # Bivariados
+               corrplot, # Graficos correlacioj
+               broom,
+              gt) # Varios
+options(scipen = 999) # para desactivar notacion cientifica
+rm(list = ls()) # para limpiar el entorno de trabajo
+```
+
+## Spearman
+
+Utilizado para calcular la correlación entre variables ordinales. Ejemplo: notas y horas de estudio. Spearman se basa en el ordenamiento de las observaciones en un ranking. Estos se ordenan de menor a mayor, y asignamos el ranking mayor al dato de menor valor, y así sucesivamente.
+
+```{r}
+#| echo: false
+#| output: true
+datos <- data.frame(
+  estudiante = c("A", "B", "C", "D", "E", "F"),
+  horas = c(1, 2, 4, 30, 68, 90),
+  calificacion = c(65, 80, 70, 95, 85, 75)
+)
+print(datos)
+```
+
+## Spearman
+
+En el caso de las horas, se ordenarían de la siguiente manera: 1, 2, 4, 30, 68, 90
+
+y se les asignaría el ranking: 50, 46, 47, 30, 1
+
+Si existen dos valores (o más) que se repiten, se promedian los ránking que ocuparían.
+
+Ejemplo: F(3 horas de estudio) y M (3 horas de estudio)
+
+Ocuparían los ránkings: F(47) y M (48)
+
+Promedio: 47.5 ⟶ por tanto, los casos (estudiantes) F y M ocupan el ránking 47.5
+
+## Cálculo de Spearman
+
+Para efectos prácticos, ocuparemos el siguiente código de R para calcular este tipo de correlación:
+
+```{r}
+#| output: false
+#| eval: false
+cor.test(basededatos$variable1, basededatos$variable2, method = "spearman")
+```
+
+Así, obtendremos valor-p y el valor de la correlación (rho).
+
+## Interpretación
+
+-   ρ = +1: Relación perfecta positiva (cuando X aumenta, Y siempre aumenta).
+
+-   ρ = -1: Relación perfecta negativa (cuando X aumenta, Y siempre disminuye).
+
+-   ρ = 0: No hay relación monotónica.
+
+-   0 \< \|ρ\| \< 1
+
+## Recordar...
+
+-   Los valores de Spearman se interpretan igual que Pearson, de -1 a 1.
+
+-   Es utilizado para calcular correlación entre variables ordinales.
+
+-   No requiere distribución normal.
+
+## Tau de kendall
+
+Similar a Spearman, pero da resultados más robustos cuando hay muchos empates de datos, valores extremos o con baja cantidad de casos.
+
+Ejemplo: Ingresos y cantidad de dinero destinada al ocio
+
+![](images/Captura de pantalla 2025-10-17 150114.png){fig-align="center" width="12cm"}
+
+## compara la prevalencia entre ellos...
+
+Concordantes: Se basa en la comparación de observaciones concordantes: misma dirección.
+
+X₁ \< X₂ y Y₁ \< Y₂, o
+
+X₁ \> X₂ y Y₁ \> Y₂
+
+Discordantes: distinta dirección.
+
+X₁ \< X₂ pero Y₁ \> Y₂, o
+
+X₁ \> X₂ pero Y₁ \< Y₂
+
+## Interpretación
+
+***Rango: -1 ≤ τ ≤ 1***
+
+-   τ = 1: Concordancia perfecta (todos los pares son concordantes).
+
+-   τ = -1: Discordancia perfecta (todos los pares son discordantes).
+
+-   τ = 0: No hay asociación .
+
+# **Gracias por su atención !**
