@@ -98,7 +98,7 @@ Ejemplo: Ingresos y cantidad de dinero destinada al ocio
 
 ![](images/Captura de pantalla 2025-10-17 150114.png){fig-align="center" width="12cm"}
 
-## compara la prevalencia entre ellos...
+## Compara la prevalencia entre ellos...
 
 Concordantes: Se basa en la comparación de observaciones concordantes: misma dirección.
 
