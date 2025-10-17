@@ -1,0 +1,131 @@
+---
+title: "Ayudantía 2: Matriz de Correlacion y Casos Perdidos"
+subtitle: "Estadística Correlacional"
+author: "Isidora Valencia A."
+date: 2025-10-15
+lang: es
+date-format: "long"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    transition: fade
+    transition-speed: slow
+css: styles.css
+editor: visual
+echo: true
+---
+
+## ¿Qué es una Matriz de Correlación?
+
+Una matriz de correlación se conforma cuando se representa simultaneamente más de un par de asociaciones bivariadas.
+
+*EJ: Si estamos analizando Genero con Nivel educacional y queremos agregar edad quedaria...*
+
+-   *Género-Educación*
+
+-   *Género-Edad*
+
+-   *Edad-Educación*
+
+## ¿Cómo se calcula?
+
+En R quedaria...
+
+```{r}
+#| eval: false
+
+sjPlot::tab_corr(basededatos, 
+                triangle = "lower")
+
+```
+
+Lo que nos quedaria es una tabla de doble entrada donde las variables se presentan tanto en las filas como en las columnas
+
+*El coeficiente de correlación correspondiente al par de variables aparece en la intersección de las columnas*
+
+## Casos Perdidos (NA)
+
+Existen dos maneras de tratar los casos perdidos
+
+-   [**Listwise**]{.underline}: Las correlaciones bivariadas requieren eliminación de casos perdidos tipo listwise, es decir, si hay un dato perdido en una variable se pierde el caso completo. **Siempre y cuando sea menos del 10% de los casos totales, sino se usa Pairwise.**
+
+-   [**Pairwise:**]{.underline} En el caso de las matrices de correlaciones es posible tomar la opción pairwise para casos perdidos. Esto quiere decir que, se elimana los casos perdidos solo cuando afectan al caluculo de un par espcifico.
+
+## ¿Como se calculan?
+
+<!-- -->
+
+-   En el caso Pairwise
+
+```{r}
+#| eval: false
+
+data %>% select(educ, gene, edad) %>% 
+cor(., use = "pairwise")
+
+```
+
+-   En el caso de Listwise
+
+```{r}
+#| eval: false
+
+basededatos <- na.omit(basededatos)
+dim(basededatos)
+
+```
+
+## Ejercicio
+
+```{r}
+#| eval: false
+
+pacman::p_load(tidyverse, # Manipulacion datos
+               sjPlot, # Graficos y tablas
+               sjmisc, # Descriptivos
+               corrplot, # Correlaciones
+               psych, # Test estadísticos
+               kableExtra) # Tablas
+
+options(scipen = 999) # para desactivar notacion cientifica
+rm(list = ls()) # para limpiar el entorno de trabajo
+
+# Cargar bbdd desde internet
+load(url("https://github.com/cursos-metodos-facso/datos-ejemplos/raw/refs/heads/main/issp_2009_chile.RData"))
+```
+
+1.  Estime y reporte una matriz de correlación con las variables `income` y `educyrs`. Considere el tratamiento de casos perdidos.
+
+## Resolución
+
+1.  Para estimar y reportar una matriz de correlación con las variables `income` y `educyrs`, primero crearemos un objeto `M_ej` en donde almacenaremos solo estas dos variables.
+
+```{r}
+#| eval: false
+
+M_ej <- proc_issp %>% 
+  dplyr::select(income, educyrs)
+
+head(M_ej) # verificamos mirando los primeros 6 casos
+
+```
+
+## Resolución
+
+2.  Luego, calculamos la matriz de correlación sobre el objeto M_ej. En este caso, lo haremos con tab_corr para que nos entregue una tabla de calidad. Además, debemos tener claro el método de tratamiento de casos pérdidos. Una opción es utilizar listwise y trabajar solo con casos completos, considerando que tenemos un N lo suficientemente grande incluso eliminando dichos casos.
+
+```{r}
+#| eval: false
+
+sjPlot::tab_corr(M_ej,
+                 na.deletion = "listwise", # espeficicamos tratamiento NA
+                 triangle = "lower")
+
+```
+
+## Respuesta
+
+A partir de esta matriz, podemos afirmar que la correlación de Pearson entre el ingreso y el nivel educativo es positiva, moderada y estadísticamente significativa ( r = 0.4, p \< 0.05).
+
+# Gracias por ver
