@@ -1,7 +1,7 @@
 ---
 title: "Ayudantía 2: Matriz de Correlacion y Casos Perdidos"
 subtitle: "Estadística Correlacional"
-author: "Isidora Valencia A."
+author: "Equipo de Ayudantes"
 date: 2025-10-15
 lang: es
 date-format: "long"
