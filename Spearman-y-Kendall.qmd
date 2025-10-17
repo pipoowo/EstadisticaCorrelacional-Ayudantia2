@@ -40,25 +40,23 @@ Utilizado para calcular la correlación entre variables ordinales. Ejemplo: nota
 #| output: true
 datos <- data.frame(
   estudiante = c("A", "B", "C", "D", "E", "F"),
-  horas = c(1, 2, 4, 30, 68, 90),
-  calificacion = c(65, 80, 70, 95, 85, 75)
+  calidad_de_sueño = c(0, 1, 2, 3, 4, 4), # 0: muy mala - 4: muy buena
+  rendimiento_académico = c(0, 1, 0, 3, 3, 4) # 0: pesimo - 4: excelente
 )
 print(datos)
 ```
 
 ## Spearman
 
-En el caso de las horas, se ordenarían de la siguiente manera: 1, 2, 4, 30, 68, 90
+En el caso de las horas, se ordenarían de la siguiente manera: 0, 1, 2, 3, 4, 4
 
-y se les asignaría el ranking: 50, 46, 47, 30, 1
+y se les asignaría el ranking: 6, 5, 4, 3, 2, 1.
 
 Si existen dos valores (o más) que se repiten, se promedian los ránking que ocuparían.
 
-Ejemplo: F(3 horas de estudio) y M (3 horas de estudio)
+Ejemplo: el valor 4 esta repetido dos veces en el ránking 5 y 6.
 
-Ocuparían los ránkings: F(47) y M (48)
-
-Promedio: 47.5 ⟶ por tanto, los casos (estudiantes) F y M ocupan el ránking 47.5
+Promedio: 5.5 ⟶ por lo tanto, los casos (estudiantes) E y F ocupan el ránking 5.5.
 
 ## Cálculo de Spearman
 
@@ -94,9 +92,15 @@ Así, obtendremos valor-p y el valor de la correlación (rho).
 
 Similar a Spearman, pero da resultados más robustos cuando hay muchos empates de datos, valores extremos o con baja cantidad de casos.
 
-Ejemplo: Ingresos y cantidad de dinero destinada al ocio
+Para efectos prácticos, ocuparemos el siguiente código de R para calcularlo:
 
-![](images/Captura de pantalla 2025-10-17 150114.png){fig-align="center" width="12cm"}
+```{r}
+#| output: false
+#| eval: false
+cor.test(basededatos$variable1, basededatos$variable2,
+         "two.sided", 
+         "kendall")
+```
 
 ## Compara la prevalencia entre ellos...
 
@@ -121,5 +125,49 @@ X₁ \> X₂ pero Y₁ \< Y₂
 -   τ = -1: Discordancia perfecta (todos los pares son discordantes).
 
 -   τ = 0: No hay asociación .
+
+## Ejercicio
+
+**¿En qué medida se relacionan el estatus social subjetivo de las personas con preferencia por redistribución?**
+
+```{r}
+pacman::p_load(tidyverse, # Manipulacion de datos
+               car, # Recodificar
+               sjPlot, # Tablas y graficos
+               sjmisc, # Descriptivos
+               kableExtra, # Tablas
+               psych, # Bivariados
+               corrplot, # Graficos correlacioj
+               broom) # Varios
+
+options(scipen = 999) # para desactivar notacion cientifica
+rm(list = ls()) # para limpiar el entorno de trabajo
+
+load(url("https://github.com/cursos-metodos-facso/datos-ejemplos/raw/refs/heads/main/issp_2009_chile.RData")) # base de datos a utilizar
+```
+
+## Procesamiento de variables a utilizar
+
+Vamos a ocupar solamente en este ejercicio las variables ordinales ***topbot*** y ***pref_redis:***
+
+```{r}
+proc_issp <- issp %>% # seleccionamos
+    dplyr::select(topbot,
+                  pref_redis) 
+```
+
+## Usando Spearman...
+
+```{r}
+cor.test(proc_issp$topbot, proc_issp$pref_redis, method = "spearman")
+```
+
+## Usando Tau de Kendall
+
+```{r}
+cor.test(proc_issp$topbot, proc_issp$pref_redis,
+         "two.sided", 
+         "kendall")
+```
 
 # **Gracias por su atención !**
