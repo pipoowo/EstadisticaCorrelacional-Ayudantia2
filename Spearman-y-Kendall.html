@@ -405,9 +405,9 @@ Equipo de Ayudantes
 
   <p class="date">17 de octubre de 2025</p>
 </section>
-<section id="spearman" class="slide level2">
-<h2>Spearman</h2>
-<p>Utilizado para calcular la correlación entre variables ordinales. Ejemplo: notas y horas de estudio. Spearman se basa en el ordenamiento de las observaciones en un ranking. Estos se ordenan de menor a mayor, y asignamos el ranking mayor al dato de menor valor, y así sucesivamente.</p>
+<section id="spearman-rho" class="slide level2">
+<h2>Spearman (rho)</h2>
+<p>Utilizado para calcular la correlación entre variables ordinales, se basa en el ordenamiento de las observaciones en un ranking. Estos se ordenan de menor a mayor, y se le asigna el ranking mayor al dato de menor valor, y así sucesivamente.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>  estudiante calidad_de_sueño rendimiento_académico
@@ -420,13 +420,12 @@ Equipo de Ayudantes
 </div>
 </div>
 </section>
-<section id="spearman-1" class="slide level2">
+<section id="spearman" class="slide level2">
 <h2>Spearman</h2>
-<p>En el caso de las horas, se ordenarían de la siguiente manera: 0, 1, 2, 3, 4, 4</p>
-<p>y se les asignaría el ranking: 6, 5, 4, 3, 2, 1.</p>
-<p>Si existen dos valores (o más) que se repiten, se promedian los ránking que ocuparían.</p>
-<p>Ejemplo: el valor 4 esta repetido dos veces en el ránking 5 y 6.</p>
-<p>Promedio: 5.5 ⟶ por lo tanto, los casos (estudiantes) E y F ocupan el ránking 5.5.</p>
+<p>Siguiendo el ejemplo anterior, los valores se ordenan y se les asigna un ranking según su posición:</p>
+<p>0 (6), 1 (5), 2 (4), 3 (3), 4 (2), 4 (1).</p>
+<p>Si existen valores repetidos (empates), se asigna a cada uno el promedio de los rankings que ocuparían:</p>
+<p>El valor 4 está repetido dos veces en el ranking 5 y 6. Por lo tanto, los estudiantes E y F ocupan el ranking 5.5.</p>
 </section>
 <section id="cálculo-de-spearman" class="slide level2">
 <h2>Cálculo de Spearman</h2>
@@ -453,8 +452,8 @@ Equipo de Ayudantes
 <li><p>No requiere distribución normal.</p></li>
 </ul>
 </section>
-<section id="tau-de-kendall" class="slide level2">
-<h2>Tau de kendall</h2>
+<section id="tau-de-kendall-tau" class="slide level2">
+<h2>Tau de kendall (tau)</h2>
 <p>Similar a Spearman, pero da resultados más robustos cuando hay muchos empates de datos, valores extremos o con baja cantidad de casos.</p>
 <p>Para efectos prácticos, ocuparemos el siguiente código de R para calcularlo:</p>
 <div class="cell">
@@ -465,7 +464,7 @@ Equipo de Ayudantes
 </section>
 <section id="compara-la-prevalencia-entre-ellos" class="slide level2">
 <h2>Compara la prevalencia entre ellos…</h2>
-<p>Concordantes: Se basa en la comparación de observaciones concordantes: misma dirección.</p>
+<p>Concordantes: Se basa en la comparación de observaciones en la misma dirección.</p>
 <p>X₁ &lt; X₂ y Y₁ &lt; Y₂, o</p>
 <p>X₁ &gt; X₂ y Y₁ &gt; Y₂</p>
 <p>Discordantes: distinta dirección.</p>
@@ -483,7 +482,7 @@ Equipo de Ayudantes
 </section>
 <section id="ejercicio" class="slide level2">
 <h2>Ejercicio</h2>
-<p><strong>¿En qué medida se relacionan el estatus social subjetivo de las personas con preferencia por redistribución?</strong></p>
+<p><strong>¿En qué medida se relacionan la percepción de desigualdad de las personas con su percepción de conflicto entre directivos y trabajadores?</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, <span class="co"># Manipulacion de datos</span></span>
 <span id="cb4-2"><a href=""></a>               car, <span class="co"># Recodificar</span></span>
@@ -497,53 +496,89 @@ Equipo de Ayudantes
 <span id="cb4-10"><a href=""></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co"># para desactivar notacion cientifica</span></span>
 <span id="cb4-11"><a href=""></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># para limpiar el entorno de trabajo</span></span>
 <span id="cb4-12"><a href=""></a></span>
-<span id="cb4-13"><a href=""></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/cursos-metodos-facso/datos-ejemplos/raw/refs/heads/main/issp_2009_chile.RData"</span>)) <span class="co"># base de datos a utilizar</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-13"><a href=""></a><span class="co"># Cargar bbdd desde internet</span></span>
+<span id="cb4-14"><a href=""></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/cursos-metodos-facso/datos-ejemplos/raw/refs/heads/main/issp_2009_chile.RData"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="procesamiento-de-variables-a-utilizar" class="slide level2">
 <h2>Procesamiento de variables a utilizar</h2>
-<p>Vamos a ocupar solamente en este ejercicio las variables ordinales <strong><em>topbot</em></strong> y <strong><em>pref_redis:</em></strong></p>
+<p>Vamos a ocupar solamente en este ejercicio las variables ordinales <strong><em>perc_ineq</em></strong> y <strong><em>conflict_mw:</em></strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>proc_issp <span class="ot">&lt;-</span> issp <span class="sc">%&gt;%</span> <span class="co"># seleccionamos</span></span>
-<span id="cb5-2"><a href=""></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(topbot,</span>
-<span id="cb5-3"><a href=""></a>                  pref_redis) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href=""></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(perc_ineq,</span>
+<span id="cb5-3"><a href=""></a>                  conflict_mw) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p><strong><em>perc_ineq</em></strong>: percepción de desigualdad (nivel de acuerdo con que las diferencias de ingreso en Chile son demasiado grandes).</p></li>
+<li><p><strong><em>conflict_mw:</em></strong> percepción de la fuerza de conflicto entre directivos y los trabajadores.</p></li>
+</ul>
+</section>
+<section id="variables-a-utilizar" class="slide level2">
+<h2>Variables a utilizar</h2>
+<p>La opción summary nos permite conocer los descriptivos de las variables:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">summary</span>(proc_issp<span class="sc">$</span>perc_ineq) <span class="co"># Percepción de desigualdad</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  1.000   4.000   4.000   4.188   5.000   5.000      13 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">summary</span>(proc_issp<span class="sc">$</span>conflict_mw)<span class="co"># preferencia por redistribución</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  1.000   2.000   3.000   2.714   3.000   4.000      78 </code></pre>
+</div>
 </div>
 </section>
 <section id="usando-spearman" class="slide level2">
-<h2>Usando Spearman…</h2>
+<h2>Usando Spearman</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">cor.test</span>(proc_issp<span class="sc">$</span>topbot, proc_issp<span class="sc">$</span>pref_redis, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">cor.test</span>(proc_issp<span class="sc">$</span>perc_ineq, proc_issp<span class="sc">$</span>conflict_mw, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Spearman's rank correlation rho
 
-data:  proc_issp$topbot and proc_issp$pref_redis
-S = 591242901, p-value = 0.000002036
+data:  proc_issp$perc_ineq and proc_issp$conflict_mw
+S = 410360168, p-value = 0.0000001154
 alternative hypothesis: true rho is not equal to 0
 sample estimates:
-       rho 
--0.1236396 </code></pre>
+      rho 
+0.1400927 </code></pre>
 </div>
 </div>
 </section>
 <section id="usando-tau-de-kendall" class="slide level2">
 <h2>Usando Tau de Kendall</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">cor.test</span>(proc_issp<span class="sc">$</span>topbot, proc_issp<span class="sc">$</span>pref_redis,</span>
-<span id="cb8-2"><a href=""></a>         <span class="st">"two.sided"</span>, </span>
-<span id="cb8-3"><a href=""></a>         <span class="st">"kendall"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">cor.test</span>(proc_issp<span class="sc">$</span>perc_ineq, proc_issp<span class="sc">$</span>conflict_mw,</span>
+<span id="cb12-2"><a href=""></a>         <span class="st">"two.sided"</span>, </span>
+<span id="cb12-3"><a href=""></a>         <span class="st">"kendall"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Kendall's rank correlation tau
 
-data:  proc_issp$topbot and proc_issp$pref_redis
-z = -4.7391, p-value = 0.000002146
+data:  proc_issp$perc_ineq and proc_issp$conflict_mw
+z = 5.2852, p-value = 0.0000001256
 alternative hypothesis: true tau is not equal to 0
 sample estimates:
       tau 
--0.102282 </code></pre>
+0.1248377 </code></pre>
 </div>
 </div>
+</section>
+<section id="interpretación-2" class="slide level2">
+<h2>Interpretación</h2>
+<p>Se empleó el <strong><em>coeficiente de correlación de Spearman</em></strong> debido a la naturaleza de las variables, en tanto ambas son <strong><em>variables ordinales</em>.</strong> El coeficiente da cuenta de una <strong><em>relacion positiva y pequeña</em></strong>, siguiendo los <strong><em>criterios de Cohen</em></strong> (1988) <em><strong>(r&nbsp;= 0.14)</strong>.</em> Es decir, <strong><em>a medida que aumenta la percepción de de desigualdad, también aumenta la percepción de la fuerza de conflicto entre directivos y trabajadores</em></strong>. La relación es <strong><em>estadísticamente significativa (p &lt; 0.001)</em></strong>, por ende es posible rechazar&nbsp;H0&nbsp;sobre no asociación entre variables, entregando evidencia a favor de una relación entre ambas variables con un 99.9% de confianza.</p>
+<p><strong><em>¿Cuál sería la interpretación a partir del coeficiente de tau de Kendall obtenido?</em></strong></p>
+</section>
+<section id="conclusión" class="slide level2">
+<h2>Conclusión</h2>
+<ul>
+<li><p>Tanto Spearman como Kendall son medidas de correlación entre dos variables (principalmente ordinales) que indican fuerza y sentido de la asociación.</p></li>
+<li><p>Spearman se basa en rangos/ranking, mientras Kendall en concordancias y discordancias entre pares.</p></li>
+<li><p>Spearman suele dar valores más altos, pero Kendall es más robusto.</p></li>
+</ul>
 </section>
 <section id="gracias-por-su-atención" class="title-slide slide level1 center">
 <h1><strong>Gracias por su atención !</strong></h1>

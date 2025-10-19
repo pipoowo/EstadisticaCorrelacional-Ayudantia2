@@ -31,9 +31,9 @@ options(scipen = 999) # para desactivar notacion cientifica
 rm(list = ls()) # para limpiar el entorno de trabajo
 ```
 
-## Spearman
+## Spearman (rho)
 
-Utilizado para calcular la correlación entre variables ordinales. Ejemplo: notas y horas de estudio. Spearman se basa en el ordenamiento de las observaciones en un ranking. Estos se ordenan de menor a mayor, y asignamos el ranking mayor al dato de menor valor, y así sucesivamente.
+Utilizado para calcular la correlación entre variables ordinales, se basa en el ordenamiento de las observaciones en un ranking. Estos se ordenan de menor a mayor, y se le asigna el ranking mayor al dato de menor valor, y así sucesivamente.
 
 ```{r}
 #| echo: false
@@ -48,15 +48,13 @@ print(datos)
 
 ## Spearman
 
-En el caso de las horas, se ordenarían de la siguiente manera: 0, 1, 2, 3, 4, 4
+Siguiendo el ejemplo anterior, los valores se ordenan y se les asigna un ranking según su posición:
 
-y se les asignaría el ranking: 6, 5, 4, 3, 2, 1.
+0 (6), 1 (5), 2 (4), 3 (3), 4 (2), 4 (1).
 
-Si existen dos valores (o más) que se repiten, se promedian los ránking que ocuparían.
+Si existen valores repetidos (empates), se asigna a cada uno el promedio de los rankings que ocuparían:
 
-Ejemplo: el valor 4 esta repetido dos veces en el ránking 5 y 6.
-
-Promedio: 5.5 ⟶ por lo tanto, los casos (estudiantes) E y F ocupan el ránking 5.5.
+El valor 4 está repetido dos veces en el ranking 5 y 6. Por lo tanto, los estudiantes E y F ocupan el ranking 5.5.
 
 ## Cálculo de Spearman
 
@@ -88,7 +86,7 @@ Así, obtendremos valor-p y el valor de la correlación (rho).
 
 -   No requiere distribución normal.
 
-## Tau de kendall
+## Tau de kendall (tau)
 
 Similar a Spearman, pero da resultados más robustos cuando hay muchos empates de datos, valores extremos o con baja cantidad de casos.
 
@@ -104,7 +102,7 @@ cor.test(basededatos$variable1, basededatos$variable2,
 
 ## Compara la prevalencia entre ellos...
 
-Concordantes: Se basa en la comparación de observaciones concordantes: misma dirección.
+Concordantes: Se basa en la comparación de observaciones en la misma dirección.
 
 X₁ \< X₂ y Y₁ \< Y₂, o
 
@@ -128,7 +126,7 @@ X₁ \> X₂ pero Y₁ \< Y₂
 
 ## Ejercicio
 
-**¿En qué medida se relacionan el estatus social subjetivo de las personas con preferencia por redistribución?**
+**¿En qué medida se relacionan la percepción de desigualdad de las personas con su percepción de conflicto entre directivos y trabajadores?**
 
 ```{r}
 pacman::p_load(tidyverse, # Manipulacion de datos
@@ -143,31 +141,62 @@ pacman::p_load(tidyverse, # Manipulacion de datos
 options(scipen = 999) # para desactivar notacion cientifica
 rm(list = ls()) # para limpiar el entorno de trabajo
 
-load(url("https://github.com/cursos-metodos-facso/datos-ejemplos/raw/refs/heads/main/issp_2009_chile.RData")) # base de datos a utilizar
+# Cargar bbdd desde internet
+load(url("https://github.com/cursos-metodos-facso/datos-ejemplos/raw/refs/heads/main/issp_2009_chile.RData"))
 ```
 
 ## Procesamiento de variables a utilizar
 
-Vamos a ocupar solamente en este ejercicio las variables ordinales ***topbot*** y ***pref_redis:***
+Vamos a ocupar solamente en este ejercicio las variables ordinales ***perc_ineq*** y ***conflict_mw:***
 
 ```{r}
 proc_issp <- issp %>% # seleccionamos
-    dplyr::select(topbot,
-                  pref_redis) 
+    dplyr::select(perc_ineq,
+                  conflict_mw) 
 ```
 
-## Usando Spearman...
+-   ***perc_ineq***: percepción de desigualdad (nivel de acuerdo con que las diferencias de ingreso en Chile son demasiado grandes).
+
+-   ***conflict_mw:*** percepción de la fuerza de conflicto entre directivos y los trabajadores.
+
+## Variables a utilizar
+
+La opción summary nos permite conocer los descriptivos de las variables:
 
 ```{r}
-cor.test(proc_issp$topbot, proc_issp$pref_redis, method = "spearman")
+summary(proc_issp$perc_ineq) # Percepción de desigualdad
+```
+
+```{r}
+summary(proc_issp$conflict_mw)# preferencia por redistribución
+```
+
+## Usando Spearman
+
+```{r}
+cor.test(proc_issp$perc_ineq, proc_issp$conflict_mw, method = "spearman")
 ```
 
 ## Usando Tau de Kendall
 
 ```{r}
-cor.test(proc_issp$topbot, proc_issp$pref_redis,
+cor.test(proc_issp$perc_ineq, proc_issp$conflict_mw,
          "two.sided", 
          "kendall")
 ```
+
+## Interpretación
+
+Se empleó el ***coeficiente de correlación de Spearman*** debido a la naturaleza de las variables, en tanto ambas son ***variables ordinales*****.** El coeficiente da cuenta de una ***relacion positiva y pequeña***, siguiendo los ***criterios de Cohen*** (1988) ***(r = 0.14)**.* Es decir, ***a medida que aumenta la percepción de de desigualdad, también aumenta la percepción de la fuerza de conflicto entre directivos y trabajadores***. La relación es ***estadísticamente significativa (p \< 0.001)***, por ende es posible rechazar H0 sobre no asociación entre variables, entregando evidencia a favor de una relación entre ambas variables con un 99.9% de confianza.
+
+***¿Cuál sería la interpretación a partir del coeficiente de tau de Kendall obtenido?***
+
+## Conclusión
+
+-   Tanto Spearman como Kendall son medidas de correlación entre dos variables (principalmente ordinales) que indican fuerza y sentido de la asociación.
+
+-   Spearman se basa en rangos/ranking, mientras Kendall en concordancias y discordancias entre pares.
+
+-   Spearman suele dar valores más altos, pero Kendall es más robusto.
 
 # **Gracias por su atención !**
