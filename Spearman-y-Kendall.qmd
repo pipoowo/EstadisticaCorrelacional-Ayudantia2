@@ -122,7 +122,7 @@ X₁ \> X₂ pero Y₁ \< Y₂
 
 -   τ = -1: Discordancia perfecta (todos los pares son discordantes).
 
--   τ = 0: No hay asociación .
+-   τ = 0: No hay asociación.
 
 ## Ejercicio
 
@@ -164,11 +164,11 @@ proc_issp <- issp %>% # seleccionamos
 La opción summary nos permite conocer los descriptivos de las variables:
 
 ```{r}
-summary(proc_issp$perc_ineq) # Percepción de desigualdad
+summary(proc_issp$perc_ineq) 
 ```
 
 ```{r}
-summary(proc_issp$conflict_mw)# preferencia por redistribución
+summary(proc_issp$conflict_mw)
 ```
 
 ## Usando Spearman
