@@ -2,7 +2,7 @@
 title: "Ayudantía 2: Spearman Y Tau de Kendall"
 subtitle: "Estadística Correlacional"
 author: "Equipo de Ayudantes"
-date: 2025-10-17
+date: 2025-10-20
 lang: es
 date-format: "long"
 format:
