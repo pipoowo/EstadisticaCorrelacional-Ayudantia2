@@ -31,6 +31,10 @@ options(scipen = 999) # para desactivar notacion cientifica
 rm(list = ls()) # para limpiar el entorno de trabajo
 ```
 
+## Enlace de la Cápsula
+
+Presiona [aquí](https://youtu.be/4UTJhkkbs_U?si=-S3MV2L3pC11pJRn) para acceder al video de esta presentación !
+
 ## Spearman (rho)
 
 Utilizado para calcular la correlación entre variables ordinales, se basa en el ordenamiento de las observaciones en un ranking. Estos se ordenan de menor a mayor, y se le asigna el ranking mayor al dato de menor valor, y así sucesivamente.
