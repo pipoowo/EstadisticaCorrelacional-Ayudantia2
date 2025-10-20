@@ -54,7 +54,7 @@ Siguiendo el ejemplo anterior, los valores se ordenan y se les asigna un ranking
 
 Si existen valores repetidos (empates), se asigna a cada uno el promedio de los rankings que ocuparían:
 
-El valor 4 está repetido dos veces en el ranking 5 y 6. Por lo tanto, los estudiantes E y F ocupan el ranking 5.5.
+El valor 4 está repetido dos veces en el ranking 1 y 2. Por lo tanto, los estudiantes E y F ocupan el ranking 1.5.
 
 ## Cálculo de Spearman
 
