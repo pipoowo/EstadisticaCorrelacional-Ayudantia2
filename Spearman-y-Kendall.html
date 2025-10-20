@@ -431,7 +431,18 @@ Equipo de Ayudantes
 <h2>Cálculo de Spearman</h2>
 <p>Para efectos prácticos, ocuparemos el siguiente código de R para calcular este tipo de correlación:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">cor.test</span>(basededatos<span class="sc">$</span>variable1, basededatos<span class="sc">$</span>variable2, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">cor.test</span>(datos<span class="sc">$</span>calidad_de_sueño, datos<span class="sc">$</span>rendimiento_académico, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Spearman's rank correlation rho
+
+data:  datos$calidad_de_sueño and datos$rendimiento_académico
+S = 5.2206, p-value = 0.03171
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+     rho 
+0.850841 </code></pre>
+</div>
 </div>
 <p>Así, obtendremos valor-p y el valor de la correlación (rho).</p>
 </section>
@@ -457,9 +468,9 @@ Equipo de Ayudantes
 <p>Similar a Spearman, pero da resultados más robustos cuando hay muchos empates de datos, valores extremos o con baja cantidad de casos.</p>
 <p>Para efectos prácticos, ocuparemos el siguiente código de R para calcularlo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">cor.test</span>(basededatos<span class="sc">$</span>variable1, basededatos<span class="sc">$</span>variable2,</span>
-<span id="cb3-2"><a href=""></a>         <span class="st">"two.sided"</span>, </span>
-<span id="cb3-3"><a href=""></a>         <span class="st">"kendall"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">cor.test</span>(basededatos<span class="sc">$</span>variable1, basededatos<span class="sc">$</span>variable2,</span>
+<span id="cb4-2"><a href=""></a>         <span class="st">"two.sided"</span>, </span>
+<span id="cb4-3"><a href=""></a>         <span class="st">"kendall"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="compara-la-prevalencia-entre-ellos" class="slide level2">
@@ -484,29 +495,29 @@ Equipo de Ayudantes
 <h2>Ejercicio</h2>
 <p><strong>¿En qué medida se relacionan la percepción de desigualdad de las personas con su percepción de conflicto entre directivos y trabajadores?</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, <span class="co"># Manipulacion de datos</span></span>
-<span id="cb4-2"><a href=""></a>               car, <span class="co"># Recodificar</span></span>
-<span id="cb4-3"><a href=""></a>               sjPlot, <span class="co"># Tablas y graficos</span></span>
-<span id="cb4-4"><a href=""></a>               sjmisc, <span class="co"># Descriptivos</span></span>
-<span id="cb4-5"><a href=""></a>               kableExtra, <span class="co"># Tablas</span></span>
-<span id="cb4-6"><a href=""></a>               psych, <span class="co"># Bivariados</span></span>
-<span id="cb4-7"><a href=""></a>               corrplot, <span class="co"># Graficos correlacioj</span></span>
-<span id="cb4-8"><a href=""></a>               broom) <span class="co"># Varios</span></span>
-<span id="cb4-9"><a href=""></a></span>
-<span id="cb4-10"><a href=""></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co"># para desactivar notacion cientifica</span></span>
-<span id="cb4-11"><a href=""></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># para limpiar el entorno de trabajo</span></span>
-<span id="cb4-12"><a href=""></a></span>
-<span id="cb4-13"><a href=""></a><span class="co"># Cargar bbdd desde internet</span></span>
-<span id="cb4-14"><a href=""></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/cursos-metodos-facso/datos-ejemplos/raw/refs/heads/main/issp_2009_chile.RData"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, <span class="co"># Manipulacion de datos</span></span>
+<span id="cb5-2"><a href=""></a>               car, <span class="co"># Recodificar</span></span>
+<span id="cb5-3"><a href=""></a>               sjPlot, <span class="co"># Tablas y graficos</span></span>
+<span id="cb5-4"><a href=""></a>               sjmisc, <span class="co"># Descriptivos</span></span>
+<span id="cb5-5"><a href=""></a>               kableExtra, <span class="co"># Tablas</span></span>
+<span id="cb5-6"><a href=""></a>               psych, <span class="co"># Bivariados</span></span>
+<span id="cb5-7"><a href=""></a>               corrplot, <span class="co"># Graficos correlacioj</span></span>
+<span id="cb5-8"><a href=""></a>               broom) <span class="co"># Varios</span></span>
+<span id="cb5-9"><a href=""></a></span>
+<span id="cb5-10"><a href=""></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co"># para desactivar notacion cientifica</span></span>
+<span id="cb5-11"><a href=""></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># para limpiar el entorno de trabajo</span></span>
+<span id="cb5-12"><a href=""></a></span>
+<span id="cb5-13"><a href=""></a><span class="co"># Cargar bbdd desde internet</span></span>
+<span id="cb5-14"><a href=""></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/cursos-metodos-facso/datos-ejemplos/raw/refs/heads/main/issp_2009_chile.RData"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="procesamiento-de-variables-a-utilizar" class="slide level2">
 <h2>Procesamiento de variables a utilizar</h2>
 <p>Vamos a ocupar solamente en este ejercicio las variables ordinales <strong><em>perc_ineq</em></strong> y <strong><em>conflict_mw:</em></strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>proc_issp <span class="ot">&lt;-</span> issp <span class="sc">%&gt;%</span> <span class="co"># seleccionamos</span></span>
-<span id="cb5-2"><a href=""></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(perc_ineq,</span>
-<span id="cb5-3"><a href=""></a>                  conflict_mw) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>proc_issp <span class="ot">&lt;-</span> issp <span class="sc">%&gt;%</span> <span class="co"># seleccionamos</span></span>
+<span id="cb6-2"><a href=""></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(perc_ineq,</span>
+<span id="cb6-3"><a href=""></a>                  conflict_mw) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><p><strong><em>perc_ineq</em></strong>: percepción de desigualdad (nivel de acuerdo con que las diferencias de ingreso en Chile son demasiado grandes).</p></li>
@@ -517,14 +528,14 @@ Equipo de Ayudantes
 <h2>Variables a utilizar</h2>
 <p>La opción summary nos permite conocer los descriptivos de las variables:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">summary</span>(proc_issp<span class="sc">$</span>perc_ineq) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">summary</span>(proc_issp<span class="sc">$</span>perc_ineq) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
   1.000   4.000   4.000   4.188   5.000   5.000      13 </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">summary</span>(proc_issp<span class="sc">$</span>conflict_mw)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">summary</span>(proc_issp<span class="sc">$</span>conflict_mw)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
   1.000   2.000   3.000   2.714   3.000   4.000      78 </code></pre>
@@ -534,7 +545,9 @@ Equipo de Ayudantes
 <section id="usando-spearman" class="slide level2">
 <h2>Usando Spearman</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">cor.test</span>(proc_issp<span class="sc">$</span>perc_ineq, proc_issp<span class="sc">$</span>conflict_mw, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">cor.test</span>(proc_issp<span class="sc">$</span>perc_ineq, proc_issp<span class="sc">$</span>conflict_mw, </span>
+<span id="cb11-2"><a href=""></a>         <span class="at">method =</span> <span class="st">"spearman"</span>, </span>
+<span id="cb11-3"><a href=""></a>         <span class="at">exact =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Spearman's rank correlation rho
@@ -551,9 +564,9 @@ sample estimates:
 <section id="usando-tau-de-kendall" class="slide level2">
 <h2>Usando Tau de Kendall</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">cor.test</span>(proc_issp<span class="sc">$</span>perc_ineq, proc_issp<span class="sc">$</span>conflict_mw,</span>
-<span id="cb12-2"><a href=""></a>         <span class="st">"two.sided"</span>, </span>
-<span id="cb12-3"><a href=""></a>         <span class="st">"kendall"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">cor.test</span>(proc_issp<span class="sc">$</span>perc_ineq, proc_issp<span class="sc">$</span>conflict_mw,</span>
+<span id="cb13-2"><a href=""></a>         <span class="st">"two.sided"</span>, </span>
+<span id="cb13-3"><a href=""></a>         <span class="st">"kendall"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Kendall's rank correlation tau

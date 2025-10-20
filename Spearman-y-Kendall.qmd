@@ -61,9 +61,7 @@ El valor 4 está repetido dos veces en el ranking 5 y 6. Por lo tanto, los estud
 Para efectos prácticos, ocuparemos el siguiente código de R para calcular este tipo de correlación:
 
 ```{r}
-#| output: false
-#| eval: false
-cor.test(basededatos$variable1, basededatos$variable2, method = "spearman")
+cor.test(datos$calidad_de_sueño, datos$rendimiento_académico, method = "spearman")
 ```
 
 Así, obtendremos valor-p y el valor de la correlación (rho).
@@ -174,7 +172,9 @@ summary(proc_issp$conflict_mw)
 ## Usando Spearman
 
 ```{r}
-cor.test(proc_issp$perc_ineq, proc_issp$conflict_mw, method = "spearman")
+cor.test(proc_issp$perc_ineq, proc_issp$conflict_mw, 
+         method = "spearman", 
+         exact = FALSE)
 ```
 
 ## Usando Tau de Kendall
