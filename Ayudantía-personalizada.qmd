@@ -1,0 +1,196 @@
+---
+title: "Ayudantía personalizada"
+subtitle: "Estadística Correlacional"
+author: "Felipe Vega G." 
+date: 2025-11-14
+lang: es
+date-format: "long"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    transition: fade
+    transition-speed: slow
+css: styles.css
+editor: visual
+echo: true
+---
+
+## Índice
+
+1.  Tipos de correlaciones.
+
+2.  Matrices de correlación y casos perdidos.
+
+3.  Chi cuadrado.
+
+```{r}
+pacman::p_load(tidyverse, # Manipulacion datos
+               sjPlot, # Graficos y tablas
+               sjmisc, # Descriptivos
+               corrplot, # Correlaciones
+               psych, # Test estadísticos
+               kableExtra) # Tablas
+
+options(scipen = 999) # para desactivar notacion cientifica
+rm(list = ls()) # para limpiar el entorno de trabajo
+
+load(url("https://github.com/cursos-metodos-facso/datos-ejemplos/raw/refs/heads/main/dataset4.RData")) #base de datos a utilizar
+```
+
+## Tipos de correlaciones
+
+1.  Correlación de Pearson: entre variables cuantitativas/numéricas.
+2.  Correlación de Spearman y Tau de Kendall: entre variables ordinales.
+3.  Correlación Punto Biserial: una variable dicotómica y otra cuantitativa/numérica.
+
+## ¿Qué tenemos que tener en cuenta al analizar correlaciones?
+
+-   Asociación lineal entre variables que indica sentido y fuerza de la asociación entre -1 a 1.
+
+-   Dirección determinada por el signo del valor: positiva o negativa.
+
+-   Intensidad de efecto usando Criterios de Cohen (1988, 1992): muy pequeño (menor a 0.1), pequeño (entre 0.1 a 0.3), moderado (entre 0.3 y 0.5), grande (mayor a 0.5).
+
+-   Significancia estadística como mínimo 95% de confianza (p \< 0.05).
+
+## Correlación de Pearson
+
+```{r}
+#| eval: false
+cor.test(basededatos$variable1, basededatos$variable2, method = "pearson")
+```
+
+**Para la Punto Biserial se ocupa el mismo código pero las variables tienen una naturaleza distinta**
+
+## Correlación de Spearman y Tau de Kendall
+
+-   Spearman
+
+```{r}
+#| eval: false
+cor.test(basededatos$variable1, basededatos$variable2, 
+         method = "spearman", 
+         exact = FALSE)
+```
+
+-   Tau de Kendall
+
+```{r}
+#| eval: false
+cor.test(basededatos$variable1, basededatos$variable2,
+         "two.sided", 
+         "kendall")
+```
+
+## Ejemplo
+
+-   ¿Qué tipo de variables estamos utilizando?
+-   ¿Cómo se interpretan los resultados?
+
+```{r}
+cor.test(dataset4$apoyo_dem, dataset4$ingresos, complete.obs = TRUE, method = "pearson")
+```
+
+## Ejemplo
+
+```{r}
+sjPlot::plot_scatter(data = dataset4, x = ingresos, y = apoyo_dem)
+```
+
+## ¿Qué es una matriz de correlación?
+
+Una matriz de correlación se conforma cuando se representa simultaneamente más de un par de asociaciones bivariadas.
+
+## ¿Listwise o Pairwise?
+
+Existen dos maneras de tratar los casos perdidos
+
+-   Listwise: Las correlaciones bivariadas requieren eliminación de casos perdidos tipo listwise, es decir, si hay un dato perdido en una variable se pierde el caso completo. Siempre y cuando sea menos del 10% de los casos totales, sino se usa Pairwise.
+
+-   Pairwise: En el caso de las matrices de correlaciones es posible tomar la opción pairwise para casos perdidos. Esto quiere decir que, se elimina los casos perdidos solo cuando afectan al calculo de un par espcifico.
+
+```{r}
+#| eval: false
+sum(is.na(bbdd))
+colSums(is.na(bbdd))
+```
+
+## Ejemplo
+
+```{r}
+datos_matriz <- dataset4 %>% 
+  dplyr::select(apoyo_dem, ingresos, ingresos_rec)
+sum(is.na(datos_matriz))
+colSums(is.na(datos_matriz))
+```
+
+**Income (decil ingreso) tiene 150 NAs de 1000 casos, 15% de los casos, ¿Qué tratamiento de datos perdidos deberíamos utilizar?**
+
+## Ejemplo
+
+```{r}
+sjPlot::tab_corr(datos_matriz,
+                 na.deletion = "pairwise", # espeficicamos tratamiento NA
+                 triangle = "lower")   
+```
+
+## Ejemplo
+
+Si ocupamos listwise pasa lo siguiente...
+
+```{r}
+sjPlot::tab_corr(datos_matriz,
+                 na.deletion = "listwise", # espeficicamos tratamiento NA
+                 triangle = "lower")   
+```
+
+No hay cambios significativos, sin embargo, **siempre hay que tener ojo !**
+
+## Chi cuadrado
+
+Chi cuadrado solo permite rechazar o no la hipótesis nula entre variables categóricas (dicotómicas, nominales o ordinales). No se puede saber la fuerza de la asociación por si sola.
+
+```{r}
+#| eval: false
+dataset4 %>%
+  sjPlot::sjtab(sexo,
+                ingresos_rec,
+                show.row.prc = TRUE, # porcentaje fila
+                show.col.prc = TRUE, # porcentaje columna
+                )
+```
+
+## Chi cuadrado
+
+La siguiente figura se llama tabla de contingencia:
+
+```{r}
+#| echo: false
+dataset4 %>%
+  sjPlot::sjtab(sexo,
+                ingresos_rec,
+                show.row.prc = TRUE, # porcentaje fila
+                show.col.prc = TRUE, # porcentaje columna
+                )
+```
+
+## Chi cuadrado
+
+También se puede calcular con el siguiente código:
+
+```{r}
+chi_results <- chisq.test(dataset4$sexo, dataset4$ingresos_rec)
+chi_results
+```
+
+**Sin embargo, puede ser más fácil visualizarlo en la tabla anterior!**
+
+## Coeficientes
+
+-   Coeficiente Phi: Para variables binarias (tablas de 2x2), Se interpreta igual que Pearson (−1 a 1) por sentido y fuerza.\
+-   V de Cramer: Para variables que van más allá de 2x2. Se interpreta con $Cohen$ para saber fuerza, va de 0 a 1.
+
+## Conclusión
+
+![](images/Captura%20de%20pantalla%202025-11-13%20183849.png){fig-align="center"}

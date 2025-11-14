@@ -12,7 +12,6 @@ body, .reveal {
   background-color: #023671ff;
 }
 
-
 /*letras cuerpo */
 .reveal p, 
 .reveal li {
@@ -50,7 +49,21 @@ body, .reveal {
   font-size: 38px;
 }
 
+/* Achica todas las tablas */
+table {
+  font-size: 0.7em;
+  width: auto !important;
+  max-width: 50%;
+  background-color: white !important;
+}
 
+/* O más específico para tablas sjPlot */
+.table-style {
+ font-size: 0.7em;
+  width: auto !important;
+  max-width: 50%;
+  background-color: white !important;
+}
 
 .reveal a {
   color: #D62828;
