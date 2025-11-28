@@ -12,7 +12,7 @@ format:
 
 ::: {style="text-align:center;"}
 
-<h1 style="font-size:110px; font-weight:bold; line-height:1.1; margin-bottom:40px;">
+<h1 style="font-size:60px; font-weight:bold; line-height:1.1; margin-bottom:40px;">
 Scrapear el bienestar:<br> un análisis computacional del discurso en The Everygirl entre 2017–2024
 </h1>
 
@@ -98,7 +98,7 @@ Elisa Calderón y Amalia Tsukame
 <br>
 
 ::: {style="text-align:center;"}
-<img src="preguntonof.png" style="width:95%; display:block; margin:auto;"/>
+<img src="preguntonof.png" style="width:65%; display:block; margin:auto;"/>
 :::
 
 ## **Objetivo de investigación**
@@ -108,7 +108,7 @@ Elisa Calderón y Amalia Tsukame
 <br>
 
 ::: {style="text-align:center;"}
-<img src="girl.png" style="width:70%; display:block; margin:auto;"/>
+<img src="girl.png" style="width:40%; display:block; margin:auto;"/>
 :::
 
 ## **Relevancia sociológica**
@@ -120,7 +120,7 @@ Elisa Calderón y Amalia Tsukame
 ::: {style="display:flex; justify-content:center; gap:10px;"}
 <img src="socio.png" style="width:60%;"/>
 
-<img src="bienestar_yoga.png" style="width:100%;"/>
+<img src="bienestar_yoga.png" style="width:60%;"/>
 :::
 
 ## **Fuente de Información**
@@ -131,7 +131,7 @@ Elisa Calderón y Amalia Tsukame
 <br>
 
 ::: {style="text-align:center;"}
-<img src="wellnessof.png" style="width:95%; display:block; margin:auto;"/>
+<img src="wellnessof.png" style="width:65%; display:block; margin:auto;"/>
 :::
 
 ## **Metodología**
@@ -142,10 +142,8 @@ Elisa Calderón y Amalia Tsukame
 
 -   Se recopilaron 4.513 artículos indexados en RSS (títulos, autores, descripciones y fechas), que fueron almacenados en formato .csv.
 
-<br>
-
 ::: {style="text-align:center;"}
-<img src="web_scrap.png" style="width:80%; display:block; margin:auto;"/>
+<img src="web_scrap.png" style="width:60%; display:block; margin:auto;"/>
 :::
 
 ## **Tutorial:códigos para extraer la infromación**
@@ -876,7 +874,7 @@ ggplot(
 -   **Distribución temporal de las publicaciones (2017–2024)** <br>
     
     ::: {style="text-align:center;"}
-    <img src="artaños.png" style="width:90%; display:block; margin:auto;"/>
+    <img src="artaños.png" style="width:60%; display:block; margin:auto;"/>
     :::
 
 ## **Resultados**
@@ -884,7 +882,7 @@ ggplot(
 -   **Cantidad de artículos por grupos mayoritarios** <br>
     
     ::: {style="text-align:center;"}
-    <img src="artgrupo.png" style="width:90%; display:block; margin:auto;"/>
+    <img src="artgrupo.png" style="width:60%; display:block; margin:auto;"/>
     ::: 
 
 ## **Resultados**
@@ -892,7 +890,7 @@ ggplot(
 -   **TF-IDF: términos distintivos en wellness y bienestar transversal** <br>
     
     ::: {style="text-align:center;"}
-    <img src="TFIDF.png" style="width:90%; display:block; margin:auto;"/>
+    <img src="TFIDF.png" style="width:60%; display:block; margin:auto;"/>
     ::: 
     
 ## **Resultados**
@@ -900,7 +898,7 @@ ggplot(
 -   **Bigramas más frecuentes** <br>
 
     ::: {style="text-align:center;"}
-    <img src="bifrecuentes.png" style="width:95%; display:block; margin:auto;"/>
+    <img src="bifrecuentes.png" style="width:60%; display:block; margin:auto;"/>
     ::: 
 
 ## **Resultados**
@@ -908,7 +906,7 @@ ggplot(
 -   **Keyness: palabras distintivas por grupo** <br>
 
     ::: {style="text-align:center;"}
-    <img src="keyness.png" style="width:95%; display:block; margin:auto;"/>
+    <img src="keyness.png" style="width:60%; display:block; margin:auto;"/>
     :::
 
 ## **Resultados**
@@ -916,7 +914,7 @@ ggplot(
 -   **Modelo LDA: subtemas del discurso wellness** <br>
 
     ::: {style="text-align:center;"}
-    <img src="LDA.png" style="width:95%; display:block; margin:auto;"/>
+    <img src="LDA.png" style="width:60%; display:block; margin:auto;"/>
     :::
 
 ## **Resultados**
@@ -924,7 +922,7 @@ ggplot(
 -   **Evolución temporal del léxico bienestar (2017–2024)** <br>
 
     ::: {style="text-align:center;"}
-    <img src="evolutemporal.png" style="width:95%; display:block; margin:auto;"/>
+    <img src="evolutemporal.png" style="width:60%; display:block; margin:auto;"/>
     :::
 
 ## **Conclusión**

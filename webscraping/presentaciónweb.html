@@ -6,8 +6,8 @@
 <script src="presentaciónweb_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="presentaciónweb_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="presentaciónweb_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="presentaciónweb_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="presentaciónweb_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="">
   <title>presentaciónweb</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="presentaciónweb_files/libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="presentaciónweb_files/libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
   <link href="presentaciónweb_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentaciónweb_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentaciónweb_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -196,7 +196,7 @@
 <section id="section" class="slide level2 center" data-background-color="#F4C6D7">
 <h2></h2>
 <div style="text-align:center;">
-<h1 style="font-size:110px; font-weight:bold; line-height:1.1; margin-bottom:40px;">
+<h1 style="font-size:60px; font-weight:bold; line-height:1.1; margin-bottom:40px;">
 Scrapear el bienestar:<br> un análisis computacional del discurso en The Everygirl entre 2017–2024
 </h1>
 <p style="font-size:40px; margin-top:20px; text-align:center !important;">
@@ -270,7 +270,7 @@ Elisa Calderón y Amalia Tsukame
 <p><strong>¿Cómo se construye y caracteriza el discurso del bienestar femenino en <em>The Everygirl</em> entre los años 2017 y 2024?</strong></p>
 <p><br></p>
 <div style="text-align:center;">
-<p><img src="preguntonof.png" style="width:95%; display:block; margin:auto;"></p>
+<p><img src="preguntonof.png" style="width:65%; display:block; margin:auto;"></p>
 </div>
 </section>
 <section id="objetivo-de-investigación" class="slide level2 center">
@@ -278,7 +278,7 @@ Elisa Calderón y Amalia Tsukame
 <p><strong>Analizar las representaciones discursivas del bienestar femenino en los artículos publicados por <em>The Everygirl</em> entre los años 2017 y 2024.</strong></p>
 <p><br></p>
 <div style="text-align:center;">
-<p><img src="girl.png" style="width:70%; display:block; margin:auto;"></p>
+<p><img src="girl.png" style="width:40%; display:block; margin:auto;"></p>
 </div>
 </section>
 <section id="relevancia-sociológica" class="slide level2 center">
@@ -289,7 +289,7 @@ Elisa Calderón y Amalia Tsukame
 </ul>
 <div style="display:flex; justify-content:center; gap:10px;">
 <p><img src="socio.png" style="width:60%;"></p>
-<p><img src="bienestar_yoga.png" style="width:100%;"></p>
+<p><img src="bienestar_yoga.png" style="width:60%;"></p>
 </div>
 </section>
 <section id="fuente-de-información" class="slide level2 center">
@@ -300,7 +300,7 @@ Elisa Calderón y Amalia Tsukame
 </ul>
 <p><br></p>
 <div style="text-align:center;">
-<p><img src="wellnessof.png" style="width:95%; display:block; margin:auto;"></p>
+<p><img src="wellnessof.png" style="width:65%; display:block; margin:auto;"></p>
 </div>
 </section>
 <section id="metodología" class="slide level2 center">
@@ -310,9 +310,8 @@ Elisa Calderón y Amalia Tsukame
 <li><p>Se utilizaron los feeds RSS</p></li>
 <li><p>Se recopilaron 4.513 artículos indexados en RSS (títulos, autores, descripciones y fechas), que fueron almacenados en formato .csv.</p></li>
 </ul>
-<p><br></p>
 <div style="text-align:center;">
-<p><img src="web_scrap.png" style="width:80%; display:block; margin:auto;"></p>
+<p><img src="web_scrap.png" style="width:60%; display:block; margin:auto;"></p>
 </div>
 </section>
 <section id="tutorialcódigos-para-extraer-la-infromación" class="slide level2 center">
@@ -321,7 +320,7 @@ Elisa Calderón y Amalia Tsukame
 <li>Paso 1: Preparación del entorno de trabajo</li>
 <li>Paso 1.1: Cargar librerías</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Web scraping</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Web scraping</span></span>
 <span id="cb1-2"><a href=""></a><span class="fu">library</span>(httr)</span>
 <span id="cb1-3"><a href=""></a><span class="fu">library</span>(xml2)</span>
 <span id="cb1-4"><a href=""></a></span>
@@ -343,7 +342,7 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb1-20"><a href=""></a><span class="co"># Visualización </span></span>
 <span id="cb1-21"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-22"><a href=""></a><span class="fu">library</span>(forcats)</span>
-<span id="cb1-23"><a href=""></a><span class="fu">library</span>(scales)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-23"><a href=""></a><span class="fu">library</span>(scales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
@@ -352,7 +351,7 @@ Elisa Calderón y Amalia Tsukame
 </li>
 <li>Paso 1.2: Definir parámetros</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>OUT_DIR  <span class="ot">&lt;-</span> <span class="st">"salidas"</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>OUT_DIR  <span class="ot">&lt;-</span> <span class="st">"salidas"</span></span>
 <span id="cb2-2"><a href=""></a>CSV_OUT  <span class="ot">&lt;-</span> <span class="fu">file.path</span>(OUT_DIR, <span class="st">"everygirl_only.csv"</span>)</span>
 <span id="cb2-3"><a href=""></a>pause_sec        <span class="ot">&lt;-</span> <span class="fl">0.8</span></span>
 <span id="cb2-4"><a href=""></a>max_pages_cat    <span class="ot">&lt;-</span> <span class="dv">200</span>   <span class="co"># categorías</span></span>
@@ -360,14 +359,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb2-6"><a href=""></a>YEAR_MIN <span class="ot">&lt;-</span> <span class="dv">2017</span>; YEAR_MAX <span class="ot">&lt;-</span> <span class="dv">2024</span></span>
 <span id="cb2-7"><a href=""></a></span>
 <span id="cb2-8"><a href=""></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(OUT_DIR)) <span class="fu">dir.create</span>(OUT_DIR, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-9"><a href=""></a>zzz <span class="ot">&lt;-</span> <span class="cf">function</span>() <span class="fu">Sys.sleep</span>(pause_sec)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-9"><a href=""></a>zzz <span class="ot">&lt;-</span> <span class="cf">function</span>() <span class="fu">Sys.sleep</span>(pause_sec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-1" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 2: Funciones para extraer información de los feeds</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>read_feed_page <span class="ot">&lt;-</span> <span class="cf">function</span>(feed_page_url){</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>read_feed_page <span class="ot">&lt;-</span> <span class="cf">function</span>(feed_page_url){</span>
 <span id="cb3-2"><a href=""></a>  <span class="fu">zzz</span>()</span>
 <span id="cb3-3"><a href=""></a>  resp <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>(httr<span class="sc">::</span><span class="fu">GET</span>(feed_page_url, httr<span class="sc">::</span><span class="fu">user_agent</span>(<span class="st">"Mozilla/5.0"</span>)), <span class="at">error =</span> <span class="cf">function</span>(e) <span class="cn">NULL</span>)</span>
 <span id="cb3-4"><a href=""></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(resp) <span class="sc">||</span> httr<span class="sc">::</span><span class="fu">http_error</span>(resp)) <span class="fu">return</span>(<span class="fu">tibble</span>())</span>
@@ -407,14 +406,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb3-38"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(out)</span>
 <span id="cb3-39"><a href=""></a>}</span>
 <span id="cb3-40"><a href=""></a></span>
-<span id="cb3-41"><a href=""></a>safe_bind <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="cf">if</span> (<span class="fu">length</span>(x)) dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(x) <span class="cf">else</span> dplyr<span class="sc">::</span><span class="fu">tibble</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-41"><a href=""></a>safe_bind <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="cf">if</span> (<span class="fu">length</span>(x)) dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(x) <span class="cf">else</span> dplyr<span class="sc">::</span><span class="fu">tibble</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-2" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 3: Definir las fuentes RSS (categorías y búsqueda por palabras claves)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>feeds_eg_cat <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>feeds_eg_cat <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <span id="cb4-2"><a href=""></a>  <span class="st">"https://theeverygirl.com/category/wellness/feed/"</span>,</span>
 <span id="cb4-3"><a href=""></a>  <span class="st">"https://theeverygirl.com/category/career-finance/feed/"</span>,</span>
 <span id="cb4-4"><a href=""></a>  <span class="st">"https://theeverygirl.com/category/career-finance/productivity/feed/"</span>,</span>
@@ -434,14 +433,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb4-18"><a href=""></a>  <span class="st">"beauty"</span>,<span class="st">"skin"</span>,<span class="st">"fitness"</span>,<span class="st">"home"</span>,<span class="st">"declutter"</span>,<span class="st">"minimalism"</span>,<span class="st">"slow living"</span>,<span class="st">"sustainability"</span>,<span class="st">"budget"</span>,<span class="st">"money"</span></span>
 <span id="cb4-19"><a href=""></a>)</span>
 <span id="cb4-20"><a href=""></a></span>
-<span id="cb4-21"><a href=""></a>eg_search_feeds <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://theeverygirl.com/?s="</span>, <span class="fu">URLencode</span>(keywords), <span class="st">"&amp;feed=rss2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-21"><a href=""></a>eg_search_feeds <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://theeverygirl.com/?s="</span>, <span class="fu">URLencode</span>(keywords), <span class="st">"&amp;feed=rss2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-3" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 4: Extracción completa de artículos y construcción del corpus</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>cat_eg <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>cat_eg <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(</span>
 <span id="cb5-2"><a href=""></a>  feeds_eg_cat, </span>
 <span id="cb5-3"><a href=""></a>  <span class="sc">~</span> <span class="fu">read_feed_paged</span>(.x, max_pages_cat, <span class="at">site=</span><span class="st">"everygirl"</span>, <span class="at">feed_kind=</span><span class="st">"category"</span>, <span class="at">save_tag=</span><span class="st">"eg_cat"</span>)</span>
 <span id="cb5-4"><a href=""></a>)</span>
@@ -464,7 +463,7 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb5-21"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>(link, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb5-22"><a href=""></a></span>
 <span id="cb5-23"><a href=""></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(rss_df, CSV_OUT)</span>
-<span id="cb5-24"><a href=""></a><span class="fu">message</span>(<span class="st">"CSV final guardado en: "</span>, <span class="fu">normalizePath</span>(CSV_OUT, <span class="at">winslash =</span> <span class="st">"/"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-24"><a href=""></a><span class="fu">message</span>(<span class="st">"CSV final guardado en: "</span>, <span class="fu">normalizePath</span>(CSV_OUT, <span class="at">winslash =</span> <span class="st">"/"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-procesamiento-de-datos" class="slide level2 center">
 <h2><strong>Tutorial: Procesamiento de datos</strong></h2>
@@ -473,12 +472,12 @@ Elisa Calderón y Amalia Tsukame
 </li>
 <li>Paso 5.1: Cargar corpus</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>df <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"salidas/everygirl_only.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>df <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"salidas/everygirl_only.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Paso 5.2: Fechas y filtro temporal<br>
 </li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb7-2"><a href=""></a>  <span class="fu">mutate</span>(</span>
 <span id="cb7-3"><a href=""></a>    <span class="at">pub_date_parsed =</span> <span class="fu">parse_date_time</span>(</span>
 <span id="cb7-4"><a href=""></a>      pub_date, </span>
@@ -487,7 +486,7 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb7-7"><a href=""></a>    ),</span>
 <span id="cb7-8"><a href=""></a>    <span class="at">year =</span> <span class="fu">year</span>(pub_date_parsed)</span>
 <span id="cb7-9"><a href=""></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb7-10"><a href=""></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">2017</span>, year <span class="sc">&lt;=</span> <span class="dv">2024</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-10"><a href=""></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">2017</span>, year <span class="sc">&lt;=</span> <span class="dv">2024</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-4" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
@@ -496,7 +495,7 @@ Elisa Calderón y Amalia Tsukame
 </li>
 <li>Paso 5.3: Descriptivos</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co"># Total de artículos</span></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co"># Total de artículos</span></span>
 <span id="cb8-2"><a href=""></a>n_total <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df)</span>
 <span id="cb8-3"><a href=""></a><span class="fu">cat</span>(<span class="st">"Total de artículos en el corpus:"</span>, n_total, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
 <span id="cb8-4"><a href=""></a></span>
@@ -525,14 +524,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb8-27"><a href=""></a>    <span class="at">x =</span> <span class="st">"Año"</span>,</span>
 <span id="cb8-28"><a href=""></a>    <span class="at">y =</span> <span class="st">"Número de artículos"</span></span>
 <span id="cb8-29"><a href=""></a>  ) <span class="sc">+</span></span>
-<span id="cb8-30"><a href=""></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-30"><a href=""></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-5" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 6: Limpieza de texto</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb9-2"><a href=""></a>  <span class="fu">mutate</span>(</span>
 <span id="cb9-3"><a href=""></a>    <span class="at">text =</span> <span class="fu">paste</span>(title, summary, <span class="at">sep =</span> <span class="st">". "</span>),</span>
 <span id="cb9-4"><a href=""></a>    <span class="at">text =</span> <span class="fu">str_replace_all</span>(text, <span class="st">"&amp;#8217;"</span>, <span class="st">"'"</span>),</span>
@@ -554,7 +553,7 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb9-20"><a href=""></a>  )</span>
 <span id="cb9-21"><a href=""></a></span>
 <span id="cb9-22"><a href=""></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb9-23"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">doc_id =</span> <span class="fu">row_number</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-23"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">doc_id =</span> <span class="fu">row_number</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-6" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
@@ -563,7 +562,7 @@ Elisa Calderón y Amalia Tsukame
 </li>
 <li>Paso 7.1: Reconstrucción</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb10-2"><a href=""></a>  <span class="fu">mutate</span>(</span>
 <span id="cb10-3"><a href=""></a>    <span class="at">category2 =</span> <span class="fu">case_when</span>(</span>
 <span id="cb10-4"><a href=""></a>      <span class="fu">str_detect</span>(feed, <span class="st">"wellness"</span>) <span class="sc">~</span> <span class="st">"wellness"</span>,</span>
@@ -574,7 +573,7 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb10-9"><a href=""></a>      <span class="fu">str_detect</span>(feed, <span class="st">"home"</span>) <span class="sc">~</span> <span class="st">"home"</span>,</span>
 <span id="cb10-10"><a href=""></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"bienestar_transversal"</span></span>
 <span id="cb10-11"><a href=""></a>    )</span>
-<span id="cb10-12"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-12"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-7" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
@@ -583,13 +582,13 @@ Elisa Calderón y Amalia Tsukame
 </li>
 <li>Paso 7.2: Filtrar categorías</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>valid_cats <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>valid_cats <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb11-2"><a href=""></a>  <span class="fu">count</span>(category2) <span class="sc">%&gt;%</span></span>
 <span id="cb11-3"><a href=""></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">150</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb11-4"><a href=""></a>  <span class="fu">pull</span>(category2)</span>
 <span id="cb11-5"><a href=""></a></span>
 <span id="cb11-6"><a href=""></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb11-7"><a href=""></a>  <span class="fu">filter</span>(category2 <span class="sc">%in%</span> valid_cats)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-7"><a href=""></a>  <span class="fu">filter</span>(category2 <span class="sc">%in%</span> valid_cats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-8" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
@@ -598,7 +597,7 @@ Elisa Calderón y Amalia Tsukame
 </li>
 <li>Paso 7.3: Crear variable <em>group</em> y graficar</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href=""></a>  <span class="fu">mutate</span>(</span>
 <span id="cb12-3"><a href=""></a>    <span class="at">group =</span> <span class="fu">if_else</span>(</span>
 <span id="cb12-4"><a href=""></a>      category2 <span class="sc">==</span> <span class="st">"wellness"</span>,</span>
@@ -633,42 +632,42 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb12-33"><a href=""></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">20</span>),</span>
 <span id="cb12-34"><a href=""></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(),</span>
 <span id="cb12-35"><a href=""></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>()</span>
-<span id="cb12-36"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-36"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-9" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 8: Stopwords</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">data</span>(<span class="st">"stop_words"</span>)</span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">data</span>(<span class="st">"stop_words"</span>)</span>
 <span id="cb13-2"><a href=""></a></span>
 <span id="cb13-3"><a href=""></a>custom_stops <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">word =</span> <span class="fu">c</span>(</span>
 <span id="cb13-4"><a href=""></a>  <span class="st">"im"</span>,<span class="st">"ive"</span>,<span class="st">"youre"</span>,<span class="st">"its"</span>,<span class="st">"cant"</span>,<span class="st">"dont"</span>,<span class="st">"didnt"</span>,<span class="st">"theres"</span>,</span>
 <span id="cb13-5"><a href=""></a>  <span class="st">"8217"</span>,<span class="st">"8220"</span>,<span class="st">"8221"</span>,<span class="st">"â"</span>,<span class="st">"€"</span>,<span class="st">"™"</span>,<span class="st">"’"</span>,<span class="st">"‘"</span>,<span class="st">"“"</span>,<span class="st">"”"</span></span>
 <span id="cb13-6"><a href=""></a>))</span>
 <span id="cb13-7"><a href=""></a></span>
-<span id="cb13-8"><a href=""></a>all_stops <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(stop_words, custom_stops)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-8"><a href=""></a>all_stops <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(stop_words, custom_stops)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-10" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 9: Tokenización</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>tokens_unigram <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>tokens_unigram <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb14-2"><a href=""></a>  <span class="fu">select</span>(doc_id, year, group, text) <span class="sc">%&gt;%</span></span>
 <span id="cb14-3"><a href=""></a>  <span class="fu">unnest_tokens</span>(word, text) <span class="sc">%&gt;%</span></span>
 <span id="cb14-4"><a href=""></a>  <span class="fu">filter</span>(</span>
 <span id="cb14-5"><a href=""></a>    <span class="sc">!</span>word <span class="sc">%in%</span> all_stops<span class="sc">$</span>word,</span>
 <span id="cb14-6"><a href=""></a>    <span class="sc">!</span><span class="fu">str_detect</span>(word, <span class="st">"^[0-9]+$"</span>),</span>
 <span id="cb14-7"><a href=""></a>    <span class="fu">nchar</span>(word) <span class="sc">&gt;</span> <span class="dv">2</span></span>
-<span id="cb14-8"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-8"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-11" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 9.1: Tokenización en bigramas</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>tokens_bigram <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>tokens_bigram <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb15-2"><a href=""></a>  <span class="fu">select</span>(doc_id, text) <span class="sc">%&gt;%</span></span>
 <span id="cb15-3"><a href=""></a>  <span class="fu">unnest_tokens</span>(bigram, text, <span class="at">token =</span> <span class="st">"ngrams"</span>, <span class="at">n =</span> <span class="dv">2</span>)</span>
 <span id="cb15-4"><a href=""></a></span>
@@ -687,14 +686,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb15-17"><a href=""></a>    <span class="at">w2 =</span> <span class="fu">gsub</span>(<span class="st">"s$"</span>, <span class="st">""</span>, w2),</span>
 <span id="cb15-18"><a href=""></a>    <span class="at">bigram =</span> <span class="fu">paste</span>(w1, w2)</span>
 <span id="cb15-19"><a href=""></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb15-20"><a href=""></a>  <span class="fu">count</span>(bigram, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-20"><a href=""></a>  <span class="fu">count</span>(bigram, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-análisis-de-datos" class="slide level2 center">
 <h2><strong>Tutorial: análisis de datos</strong></h2>
 <ul>
 <li>Paso 10: TF-IDF por grupo (wellness vs bienestar_transversal)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>tfidf_words <span class="ot">&lt;-</span> tokens_unigram <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>tfidf_words <span class="ot">&lt;-</span> tokens_unigram <span class="sc">%&gt;%</span></span>
 <span id="cb16-2"><a href=""></a>  <span class="fu">count</span>(group, word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb16-3"><a href=""></a>  <span class="fu">bind_tf_idf</span>(word, group, n) <span class="sc">%&gt;%</span></span>
 <span id="cb16-4"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(tf_idf))</span>
@@ -738,14 +737,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb16-42"><a href=""></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
 <span id="cb16-43"><a href=""></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
 <span id="cb16-44"><a href=""></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb16-45"><a href=""></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span>_</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-45"><a href=""></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span>_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-12" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 11: Bigramas por grupo (wellness vs bienestar_transversal)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>bigrams_group <span class="ot">&lt;-</span> tokens_bigram <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>bigrams_group <span class="ot">&lt;-</span> tokens_bigram <span class="sc">%&gt;%</span></span>
 <span id="cb17-2"><a href=""></a>  <span class="fu">separate</span>(bigram, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"w1"</span>, <span class="st">"w2"</span>), <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb17-3"><a href=""></a>  <span class="fu">filter</span>(</span>
 <span id="cb17-4"><a href=""></a>    <span class="sc">!</span>w1 <span class="sc">%in%</span> all_stops<span class="sc">$</span>word,</span>
@@ -793,7 +792,7 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb17-46"><a href=""></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
 <span id="cb17-47"><a href=""></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>),</span>
 <span id="cb17-48"><a href=""></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>)</span>
-<span id="cb17-49"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-49"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-13" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
@@ -802,7 +801,7 @@ Elisa Calderón y Amalia Tsukame
 </li>
 <li>Paso 12.1: Limpieza especial</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>limpiar <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>limpiar <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb18-2"><a href=""></a>  x <span class="sc">%&gt;%</span></span>
 <span id="cb18-3"><a href=""></a>    <span class="fu">str_replace_all</span>(<span class="st">"[[:punct:]]"</span>, <span class="st">" "</span>) <span class="sc">%&gt;%</span>     <span class="co"># eliminar puntuación</span></span>
 <span id="cb18-4"><a href=""></a>    <span class="fu">str_replace_all</span>(<span class="st">"[0-9]+"</span>, <span class="st">" "</span>) <span class="sc">%&gt;%</span>          <span class="co"># eliminar números</span></span>
@@ -812,14 +811,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb18-8"><a href=""></a>    <span class="fu">tolower</span>()                                   <span class="co"># pasar a minúsculas</span></span>
 <span id="cb18-9"><a href=""></a>}</span>
 <span id="cb18-10"><a href=""></a></span>
-<span id="cb18-11"><a href=""></a>df<span class="sc">$</span>text_clean <span class="ot">&lt;-</span> <span class="fu">limpiar</span>(df<span class="sc">$</span>text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-11"><a href=""></a>df<span class="sc">$</span>text_clean <span class="ot">&lt;-</span> <span class="fu">limpiar</span>(df<span class="sc">$</span>text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-14" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 12.2: Crear corpus, tokenizar y construir matriz DFM</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>corp_key <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>corp_key <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb19-2"><a href=""></a>  <span class="fu">mutate</span>(</span>
 <span id="cb19-3"><a href=""></a>    <span class="at">group =</span> <span class="fu">if_else</span>(</span>
 <span id="cb19-4"><a href=""></a>      category2 <span class="sc">==</span> <span class="st">"wellness"</span>,</span>
@@ -841,14 +840,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb19-20"><a href=""></a></span>
 <span id="cb19-21"><a href=""></a>dfm_sub <span class="ot">&lt;-</span> dfm_key[</span>
 <span id="cb19-22"><a href=""></a>  <span class="fu">docvars</span>(dfm_key, <span class="st">"group"</span>) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"wellness"</span>, <span class="st">"bienestar_transversal"</span>),</span>
-<span id="cb19-23"><a href=""></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-23"><a href=""></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-15" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 12.3: Cálculo de Keyness</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>key_clean <span class="ot">&lt;-</span> <span class="fu">textstat_keyness</span>(</span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>key_clean <span class="ot">&lt;-</span> <span class="fu">textstat_keyness</span>(</span>
 <span id="cb20-2"><a href=""></a>  dfm_sub,</span>
 <span id="cb20-3"><a href=""></a>  <span class="at">target =</span> <span class="fu">docvars</span>(dfm_sub, <span class="st">"group"</span>) <span class="sc">==</span> <span class="st">"wellness"</span></span>
 <span id="cb20-4"><a href=""></a>)</span>
@@ -861,14 +860,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb20-11"><a href=""></a>      <span class="st">"Wellness"</span>,</span>
 <span id="cb20-12"><a href=""></a>      <span class="st">"Bienestar transversal"</span></span>
 <span id="cb20-13"><a href=""></a>    )</span>
-<span id="cb20-14"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-14"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-16" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 12.4: Gráfico de Keyness</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">ggplot</span>(</span>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">ggplot</span>(</span>
 <span id="cb21-2"><a href=""></a>  key20, </span>
 <span id="cb21-3"><a href=""></a>  <span class="fu">aes</span>(</span>
 <span id="cb21-4"><a href=""></a>    <span class="at">x =</span> <span class="fu">reorder</span>(feature, chi2), </span>
@@ -898,7 +897,7 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb21-28"><a href=""></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
 <span id="cb21-29"><a href=""></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>),</span>
 <span id="cb21-30"><a href=""></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>)</span>
-<span id="cb21-31"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb21-31"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-17" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
@@ -907,7 +906,7 @@ Elisa Calderón y Amalia Tsukame
 </li>
 <li>Paso 13.1: Filtrar corpus y construir DTM</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>df_well <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>df_well <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb22-2"><a href=""></a>  <span class="fu">filter</span>(category2 <span class="sc">==</span> <span class="st">"wellness"</span>)</span>
 <span id="cb22-3"><a href=""></a></span>
 <span id="cb22-4"><a href=""></a>corp_well <span class="ot">&lt;-</span> <span class="fu">corpus</span>(</span>
@@ -925,14 +924,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb22-16"><a href=""></a>  <span class="fu">dfm</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb22-17"><a href=""></a>  <span class="fu">dfm_trim</span>(<span class="at">min_termfreq =</span> <span class="dv">10</span>)</span>
 <span id="cb22-18"><a href=""></a></span>
-<span id="cb22-19"><a href=""></a>dtm_well <span class="ot">&lt;-</span> <span class="fu">convert</span>(dfm_well, <span class="at">to =</span> <span class="st">"topicmodels"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-19"><a href=""></a>dtm_well <span class="ot">&lt;-</span> <span class="fu">convert</span>(dfm_well, <span class="at">to =</span> <span class="st">"topicmodels"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-18" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 13.2: Ajustar modelo LDA y obtener términos principales</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb23-2"><a href=""></a></span>
 <span id="cb23-3"><a href=""></a>lda_well <span class="ot">&lt;-</span> <span class="fu">LDA</span>(</span>
 <span id="cb23-4"><a href=""></a>  dtm_well,</span>
@@ -948,14 +947,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb23-14"><a href=""></a>top_terms_well <span class="ot">&lt;-</span> beta_well <span class="sc">%&gt;%</span></span>
 <span id="cb23-15"><a href=""></a>  <span class="fu">group_by</span>(topic) <span class="sc">%&gt;%</span></span>
 <span id="cb23-16"><a href=""></a>  <span class="fu">slice_max</span>(beta, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb23-17"><a href=""></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb23-17"><a href=""></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-19" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 13.3: Gráfico de tópicos (LDA Wellness)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="fu">ggplot</span>(</span>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="fu">ggplot</span>(</span>
 <span id="cb24-2"><a href=""></a>  top_terms_well,</span>
 <span id="cb24-3"><a href=""></a>  <span class="fu">aes</span>(</span>
 <span id="cb24-4"><a href=""></a>    <span class="at">x =</span> <span class="fu">reorder_within</span>(term, beta, topic),</span>
@@ -984,14 +983,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb24-27"><a href=""></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb24-28"><a href=""></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>),</span>
 <span id="cb24-29"><a href=""></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">face =</span> <span class="st">"bold"</span>)</span>
-<span id="cb24-30"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb24-30"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tutorial-20" class="slide level2 center">
 <h2><strong>Tutorial</strong></h2>
 <ul>
 <li>Paso 14: Evolución temporal de términos clave</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="co"># PASO 14: EVOLUCIÓN TEMPORAL </span></span>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="co"># PASO 14: EVOLUCIÓN TEMPORAL </span></span>
 <span id="cb25-2"><a href=""></a></span>
 <span id="cb25-3"><a href=""></a>palabras_clave <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <span id="cb25-4"><a href=""></a>  <span class="st">"anxiety"</span>,<span class="st">"stress"</span>,<span class="st">"routine"</span>,<span class="st">"balance"</span>,</span>
@@ -1019,14 +1018,14 @@ Elisa Calderón y Amalia Tsukame
 <span id="cb25-26"><a href=""></a>    <span class="at">y =</span> <span class="st">"Frecuencia absoluta"</span>,</span>
 <span id="cb25-27"><a href=""></a>    <span class="at">color =</span> <span class="st">"Término"</span></span>
 <span id="cb25-28"><a href=""></a>  ) <span class="sc">+</span></span>
-<span id="cb25-29"><a href=""></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-29"><a href=""></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="resultados" class="slide level2 center">
 <h2><strong>Resultados</strong></h2>
 <ul>
 <li><p><strong>Distribución temporal de las publicaciones (2017–2024)</strong> <br></p>
 <div style="text-align:center;">
-<p><img src="artaños.png" style="width:90%; display:block; margin:auto;"></p>
+<p><img src="artaños.png" style="width:60%; display:block; margin:auto;"></p>
 </div></li>
 </ul>
 </section>
@@ -1035,7 +1034,7 @@ Elisa Calderón y Amalia Tsukame
 <ul>
 <li><p><strong>Cantidad de artículos por grupos mayoritarios</strong> <br></p>
 <div style="text-align:center;">
-<p><img src="artgrupo.png" style="width:90%; display:block; margin:auto;"></p>
+<p><img src="artgrupo.png" style="width:60%; display:block; margin:auto;"></p>
 </div></li>
 </ul>
 </section>
@@ -1044,7 +1043,7 @@ Elisa Calderón y Amalia Tsukame
 <ul>
 <li><p><strong>TF-IDF: términos distintivos en wellness y bienestar transversal</strong> <br></p>
 <div style="text-align:center;">
-<p><img src="TFIDF.png" style="width:90%; display:block; margin:auto;"></p>
+<p><img src="TFIDF.png" style="width:60%; display:block; margin:auto;"></p>
 </div></li>
 </ul>
 </section>
@@ -1053,7 +1052,7 @@ Elisa Calderón y Amalia Tsukame
 <ul>
 <li><p><strong>Bigramas más frecuentes</strong> <br></p>
 <div style="text-align:center;">
-<p><img src="bifrecuentes.png" style="width:95%; display:block; margin:auto;"></p>
+<p><img src="bifrecuentes.png" style="width:60%; display:block; margin:auto;"></p>
 </div></li>
 </ul>
 </section>
@@ -1062,7 +1061,7 @@ Elisa Calderón y Amalia Tsukame
 <ul>
 <li><p><strong>Keyness: palabras distintivas por grupo</strong> <br></p>
 <div style="text-align:center;">
-<p><img src="keyness.png" style="width:95%; display:block; margin:auto;"></p>
+<p><img src="keyness.png" style="width:60%; display:block; margin:auto;"></p>
 </div></li>
 </ul>
 </section>
@@ -1071,7 +1070,7 @@ Elisa Calderón y Amalia Tsukame
 <ul>
 <li><p><strong>Modelo LDA: subtemas del discurso wellness</strong> <br></p>
 <div style="text-align:center;">
-<p><img src="LDA.png" style="width:95%; display:block; margin:auto;"></p>
+<p><img src="LDA.png" style="width:60%; display:block; margin:auto;"></p>
 </div></li>
 </ul>
 </section>
@@ -1080,7 +1079,7 @@ Elisa Calderón y Amalia Tsukame
 <ul>
 <li><p><strong>Evolución temporal del léxico bienestar (2017–2024)</strong> <br></p>
 <div style="text-align:center;">
-<p><img src="evolutemporal.png" style="width:95%; display:block; margin:auto;"></p>
+<p><img src="evolutemporal.png" style="width:60%; display:block; margin:auto;"></p>
 </div></li>
 </ul>
 </section>
@@ -1309,7 +1308,7 @@ Elisa Calderón y Amalia Tsukame
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1383,14 +1382,13 @@ Elisa Calderón y Amalia Tsukame
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
