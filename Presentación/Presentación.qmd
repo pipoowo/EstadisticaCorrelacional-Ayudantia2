@@ -1,0 +1,91 @@
+---
+title: "Cambio de relato virtual: Minecraft y sus valencias en distintas temporalidades"
+subtitle: |
+  Electivo Métodos Computacionales 2025, Profesor Klaus Lehmann - Universidad de Chile
+author: "Martina Buzio y Cristóbal Plaza"
+format: revealjs
+revealjs:
+    width: 1600         
+    height: 900
+    margin: 0.05
+---
+
+## Un breve resumen... {.center background-color="beige"}
+
+::: {layout-ncol="2" layout-valign="center"}
+![](Presentación_files/API.png){width="320%"}
+
+![](Presentación_files/yt.png){width="320%"}
+:::
+
+# ¿Por qué Minecraft? {.center background-color="beige" style="text-align: center"}
+
+![](Presentación_files/Minecraft.jpg)
+
+# ¿Qué pudimos observar de la entrega anterior? {.center background-color="indigo" style="text-align: center"}
+
+------------------------------------------------------------------------
+
+## Gráficos descriptivos {.center background-color="indigo"}
+
+:::: column-screen-inset
+::: {layout-ncol="3" layout-valign="center"}
+![](Presentación_files/1.png)
+
+![](Presentación_files/2.png)
+
+![](Presentación_files/3.png)
+:::
+::::
+
+# ¿Qué integramos para esta entrega? {.center background-color="beige" style="text-align: center"}
+
+Ahora son 12 vídeos, con una muestra de 73.510 comentarios
+
+#  {.center background-color="beige" style="text-align: center"}
+
+![](Presentación_files/c1.png)
+
+# Función mediante Python {.center background-color="beige" style="text-align: center"}
+
+![](Presentación_files/c2.png)
+
+#  {background-color="beige"}
+
+![](Presentación_files/c3.png)
+
+#  {background-color="beige"}
+
+![](Presentación_files/c4.png)
+
+#  {background-color="beige"}
+
+![](Presentación_files/c5.png)
+
+# Lo que nos da como resultado {background-color="navy" style="text-align: center"}
+
+#  {background-color="navy"}
+
+![](Presentación_files/r1.jpeg)
+
+#  {background-color="navy"}
+
+![](Presentación_files/c5.1.png)
+
+# Ahora si vemos en los gráficos {background-color="navy" style="text-align: center"}
+
+#  {background-color="navy"}
+
+![](Presentación_files/g1.jpeg)
+
+#  {background-color="navy"}
+
+![](Presentación_files/g2.jpeg)
+
+#  {background-color="navy"}
+
+![](Presentación_files/g3.jpeg)
+
+#  {background-color="beige"}
+
+![](Presentación_files/imagen1.png){fig-align="center"}
